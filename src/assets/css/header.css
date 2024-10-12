@@ -1,0 +1,32 @@
+.route {
+  position: relative;
+  text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+}
+
+.route::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--skin-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.route:hover {
+  color: var(--skin-color);
+}
+
+.route:hover::before {
+  width: 100%;
+}
+
+.route.active {
+  color: var(--skin-color);
+}
+
+.route.active::before {
+  width: 100%;
+}
