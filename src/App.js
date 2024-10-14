@@ -11,6 +11,8 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import { useEffect, useState } from 'react';
 import Footer from './components/layout/Footer';
 import Portfolio from './pages/Portfolio';
+import PortfolioItem from './pages/PortfolioItem';
+
 const fallbackTheme = createTheme({
   palette: {
     primary: {
@@ -47,6 +49,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio/:id" element={<PortfolioItem />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Router>
