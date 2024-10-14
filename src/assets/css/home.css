@@ -35,7 +35,7 @@
   background-color: var(--skin-color);
   border-radius: 50%;
   opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  transition: var(--transition);
 }
 
 .slider .slider-content .next {

@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { getCssVariableValue } from './utils/getCssVariable';
 import Header from './components/layout/Header';
 
-// Import your page components
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { useEffect, useState } from 'react';
-
+import Footer from './components/layout/Footer';
+import Portfolio from './pages/Portfolio';
 const fallbackTheme = createTheme({
   palette: {
     primary: {
@@ -46,9 +46,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Router>
+
+        <Footer />
       </div>
     </ThemeProvider >
   );

@@ -1,0 +1,42 @@
+.skills-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.skills-image img {
+  width: 300px;
+  height: 300px;
+}
+
+.skills-content {
+  flex: 1;
+}
+
+.skills-list {
+  margin-top: 20px;
+}
+
+.skill-item {
+  margin-bottom: 15px;
+}
+
+.skill-title {
+  font-weight: bold;
+}
+
+.skill-percentage {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 12px;
+  position: relative;
+}
+
+.skill-bar {
+  height: 100%;
+  background-color: var(--skin-color);
+  text-align: center;
+  color: #fff;
+  transition: width 0.3s ease;
+}

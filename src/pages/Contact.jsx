@@ -1,6 +1,11 @@
+import PageTitle from "../components/shared/PageTitle"
+import SectionLayout from "../components/layout/SectionLayout"
+
 function Contact() {
 	return (
-		<div>Contact</div>
+		<SectionLayout>
+			<PageTitle title="Contact Us" />
+		</SectionLayout>
 	)
 }
 

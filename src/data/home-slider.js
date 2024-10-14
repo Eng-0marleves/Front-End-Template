@@ -1,23 +1,23 @@
 const slides = [
 	{
-		title: "Slide 1 Title",
-		subtitle: "Slide 1 Subtitle",
-		description: "This is the description for slide 1."
+		title: "AI-Powered Analytics",
+		subtitle: "Unleash the Power of Data",
+		description: "Leverage our AI-driven analytics tools to gain actionable insights, streamline operations, and boost performance."
 	},
 	{
-		title: "Slide 2 Title",
-		subtitle: "Slide 2 Subtitle",
-		description: "This is the description for slide 2."
+		title: "Cloud Computing Solutions",
+		subtitle: "Scale with Confidence",
+		description: "Our cloud computing services offer scalable infrastructure to power your business, ensuring flexibility, security, and efficiency."
 	},
 	{
-		title: "Slide 3 Title",
-		subtitle: "Slide 3 Subtitle",
-		description: "This is the description for slide 3."
+		title: "Cybersecurity Solutions",
+		subtitle: "Protect Your Data",
+		description: "Our advanced cybersecurity solutions help safeguard your business from threats, ensuring your data stays secure and compliant."
 	},
 	{
-		title: "Slide 4 Title",
-		subtitle: "Slide 4 Subtitle",
-		description: "This is the description for slide 4."
+		title: "Enterprise Automation",
+		subtitle: "Enhance Efficiency",
+		description: "Automate repetitive tasks with our enterprise automation solutions, designed to enhance efficiency and reduce operational costs."
 	}
 ];
 

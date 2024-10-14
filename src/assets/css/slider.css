@@ -1,0 +1,23 @@
+.slider-container .slick-dots li button::before {
+  font-size: 12px;
+  color: var(--shadow-skin-color);
+  opacity: 1;
+  border: 1px solid transparent;
+}
+
+.slider-container .slick-dots li.slick-active button::before {
+  color: var(--skin-color);
+}
+
+.image-slide img {
+  width: 140px;
+  height: 110px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: var(--transition);
+  margin: 0 auto;
+}
+
+.image-slide img:hover {
+  filter: grayscale(0%);
+}

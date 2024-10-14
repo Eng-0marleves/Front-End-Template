@@ -1,0 +1,29 @@
+.card {
+  height: 100%;
+  transition: var(--transition);
+}
+
+.service-icon {
+  position: relative;
+  padding: 16px;
+  background: var(--skin-color);
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 20px;
+  line-height: 8px;
+  box-shadow: -9px -11px 0px 0px var(--shadow-skin-color);
+}
+
+.card:hover {
+  color: #fff !important;
+  background: var(--skin-color);
+}
+
+.card:hover .service-icon {
+  color: var(--skin-color) !important;
+  box-shadow: -9px -11px 0px 0px var(--shadow-skin-color);
+  background: #eee;
+}
