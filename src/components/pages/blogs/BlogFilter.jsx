@@ -1,5 +1,6 @@
 import { Box, TextField, Chip, Stack, Typography } from '@mui/material';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function BlogFilter({ data, onFilter }) {
 	const [searchTerm, setSearchTerm] = useState('');
@@ -61,7 +62,9 @@ function BlogFilter({ data, onFilter }) {
 			{data.slice(0, 3).map((blog, index) => (
 				<Box key={index} sx={{ marginBottom: 2 }}>
 					<img src={blog.content[0].img} alt={blog.content[0].title} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
-					<Typography variant="subtitle1">{blog.content[0].title}</Typography>
+					<Link to={`/blog/${blog.id}`}>
+						<Typography variant="subtitle1" className='transition hover:text-primary'>{blog.content[0].title}</Typography>
+					</Link>
 				</Box>
 			))}
 		</Box>
