@@ -17,6 +17,7 @@ import TeamDetails from './pages/TeamDetails';
 import Blogs from './pages/Blogs';
 import Blog from './pages/Blog';
 import ScrollTop from './components/layout/ScrollTop';
+import Pricing from './pages/Pricing';
 
 const fallbackTheme = createTheme({
   palette: {
@@ -62,6 +63,8 @@ function App() {
 
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blog/:id" element={<Blog />} />
+
+            <Route path="/pricing" element={<Pricing />} />
 
             <Route path="/contact" element={<Contact />} />
           </Routes>

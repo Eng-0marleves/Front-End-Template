@@ -21,7 +21,7 @@ const Header = () => {
 	const [elevated, setElevated] = useState(false);
 	const [drawerOpen, setDrawerOpen] = useState(false);
 
-	const sections = ['/', '/about', '/services', '/portfolio', '/teams', '/blogs', '/contact'];
+	const sections = ['/', '/about', '/services', '/portfolio', '/teams', '/blogs', '/pricing', '/contact'];
 
 	useEffect(() => {
 		const handleScroll = () => {
