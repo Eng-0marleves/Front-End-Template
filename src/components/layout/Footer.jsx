@@ -21,7 +21,6 @@ function Footer() {
 				flexWrap='wrap'
 				flexDirection={{ xs: 'column', md: 'row' }}
 				gap={4}
-				marginTop={8}
 				textAlign='left'
 			>
 				<Box>

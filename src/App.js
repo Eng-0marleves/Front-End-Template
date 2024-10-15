@@ -12,6 +12,8 @@ import { useEffect, useState } from 'react';
 import Footer from './components/layout/Footer';
 import Portfolio from './pages/Portfolio';
 import PortfolioItem from './pages/PortfolioItem';
+import Teams from './pages/Teams';
+import TeamDetails from './pages/TeamDetails';
 
 const fallbackTheme = createTheme({
   palette: {
@@ -48,8 +50,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/:id" element={<PortfolioItem />} />
+
+            <Route path="/teams" element={<Teams />} />
+            <Route path="/teams/:id" element={<TeamDetails />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Router>

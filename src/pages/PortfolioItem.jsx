@@ -10,22 +10,17 @@ import { motion } from 'framer-motion';
 function PortfolioItem() {
 	const { id } = useParams();
 	const [product, setProduct] = useState(null);
-	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchProduct = () => {
 			const foundProduct = productData.find((item) => item.id === +id);
 			setProduct(foundProduct);
-			setLoading(false);
 		};
 
 		console.log('fetching product', productData);
 		fetchProduct();
 	}, [id]);
 
-	if (loading) {
-		return <div>Loading...</div>;
-	}
 
 	if (!product) {
 		return <div>Product not found.</div>;
@@ -45,7 +40,6 @@ function PortfolioItem() {
 	return (
 		<SectionLayout>
 			<div className="flex flex-col lg:flex-row gap-6 p-6">
-				{/* Slider Section with Animation */}
 				<motion.div
 					className="w-full lg:w-1/2 slider-container"
 					initial={{ x: '-100%', opacity: 0 }}
@@ -61,7 +55,6 @@ function PortfolioItem() {
 					</Slider>
 				</motion.div>
 
-				{/* Details Section with Animation */}
 				<motion.div
 					className="w-full lg:w-1/2 p-6 bg-white shadow-md rounded-md text-left"
 					initial={{ x: '100%', opacity: 0 }}
@@ -70,7 +63,6 @@ function PortfolioItem() {
 				>
 					<h1 className="text-2xl font-bold mb-4">{product.title}</h1>
 					<p className="mb-2"><strong>Category:</strong> {product.category}</p>
-					<p className="mb-2"><strong>Origin:</strong> {product.origin}</p>
 					<p className="mb-2"><strong>Date:</strong> {product.date}</p>
 					<p className="mb-2">
 						<strong>URL:</strong> <a href={product.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{product.url}</a>

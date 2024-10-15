@@ -1,17 +1,20 @@
-import Products from '../components/pages/portfolio/Products'
+import TeamsContainer from '../components/pages/teams/TeamsContainer'
 import SectionLayout from '../components/layout/SectionLayout'
 import PageTitle from '../components/shared/PageTitle'
-import React from 'react'
 import Founders from '../components/pages/teams/Founders'
 
-function Portfolio() {
+function Teams() {
 	return (
 		<SectionLayout>
-			<PageTitle title="Portfolio" />
+			<PageTitle title="Our Teams" />
 
-			<Products />
+			<Founders />
+
+			<TeamsContainer />
+
+
 		</SectionLayout>
 	)
 }
 
-export default Portfolio
+export default Teams
