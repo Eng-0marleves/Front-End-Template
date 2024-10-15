@@ -58,6 +58,10 @@ code {
     monospace;
 }
 
+button {
+  text-transform: capitalize !important;
+}
+
 .skin-color {
   color: var(--skin-color);
 }
