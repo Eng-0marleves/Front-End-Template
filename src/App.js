@@ -14,6 +14,9 @@ import Portfolio from './pages/Portfolio';
 import PortfolioItem from './pages/PortfolioItem';
 import Teams from './pages/Teams';
 import TeamDetails from './pages/TeamDetails';
+import Blogs from './pages/Blogs';
+import Blog from './pages/Blog';
+import ScrollTop from './components/layout/ScrollTop';
 
 const fallbackTheme = createTheme({
   palette: {
@@ -56,10 +59,14 @@ function App() {
 
             <Route path="/teams" element={<Teams />} />
             <Route path="/teams/:id" element={<TeamDetails />} />
+
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blog/:id" element={<Blog />} />
+
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </Router>
-
+        <ScrollTop />
         <Footer />
       </div>
     </ThemeProvider >

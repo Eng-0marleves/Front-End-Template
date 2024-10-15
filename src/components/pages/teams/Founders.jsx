@@ -34,7 +34,7 @@ function Founders() {
 								height: '100%',
 								background: 'transparent',
 								zIndex: 1,
-								transition: 'background 0.3s',
+								transition: 'var(--transition)',
 							},
 							'&:hover:before': {
 								background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))',
@@ -65,19 +65,34 @@ function Founders() {
 							p={1}
 							textAlign="center"
 							opacity={0}
-							transition="opacity 0.3s"
+							transition="var(--transition)"
 							zIndex={2}
 						>
 							<Typography variant="h6">{founder.name}</Typography>
 							<Typography variant="body2" className='italic'>{founder.title}</Typography>
 							<Box display="flex" justifyContent="center" mt={1}>
-								<IconButton href={founder.socialMedia.facebook} color="inherit" size="medium">
+								<IconButton href={founder.socialMedia.facebook} color="inherit" size="medium" sx={{
+									transition: 'var(--transition)',
+									'&:hover': {
+										color: 'primary.main',
+									},
+								}}>
 									<Facebook fontSize="medium" />
 								</IconButton>
-								<IconButton href={founder.socialMedia.twitter} color="inherit" size="medium">
+								<IconButton href={founder.socialMedia.twitter} color="inherit" size="medium" sx={{
+									transition: 'var(--transition)',
+									'&:hover': {
+										color: 'primary.main',
+									},
+								}}>
 									<Twitter fontSize="medium" />
 								</IconButton>
-								<IconButton href={founder.socialMedia.linkedin} color="inherit" size="medium">
+								<IconButton href={founder.socialMedia.linkedin} color="inherit" size="medium" sx={{
+									transition: 'var(--transition)',
+									'&:hover': {
+										color: 'primary.main',
+									},
+								}}>
 									<LinkedIn fontSize="medium" />
 								</IconButton>
 							</Box>
