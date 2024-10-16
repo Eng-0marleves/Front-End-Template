@@ -88,7 +88,9 @@ const Header = () => {
 		>
 			<Toolbar className="w-full" sx={{ justifyContent: 'space-between' }}>
 				<Typography variant="h4" component="div" sx={{ color: 'var(--skin-color)', ml: 2 }}>
-					LEVES
+					<Link href="/" className="flex items-center gap-2">
+						LEVES
+					</Link>
 				</Typography>
 
 				<Box className="hidden lg:flex gap-4">
