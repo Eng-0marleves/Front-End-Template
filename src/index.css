@@ -6,7 +6,7 @@
 
 :root {
   --skin-color: #ec1839;
-  --shadow-skin-color: #ffdee3c1;
+  --shadow-skin-color: color-mix(in srgb, var(--skin-color), white 70%);
   --transition: all 0.2s ease-in-out;
 }
 
@@ -24,14 +24,6 @@
   background-color: var(--skin-color);
   border-radius: 10px;
   border: 3px solid #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #d12c44;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background-color: #a51d32;
 }
 
 ::-webkit-scrollbar-corner {

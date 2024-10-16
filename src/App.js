@@ -2,7 +2,6 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { getCssVariableValue } from './utils/getCssVariable';
 import Header from './components/layout/Header';
-
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -19,6 +18,7 @@ import Blog from './pages/Blog';
 import ScrollTop from './components/layout/ScrollTop';
 import Pricing from './pages/Pricing';
 import NotFound from './pages/NotFound';
+import ThemeSettings from './components/layout/ThemeSettings';
 
 const fallbackTheme = createTheme({
   palette: {
@@ -45,11 +45,27 @@ function App() {
     setTheme(muiTheme);
   }, []);
 
+  const handleSkinColorChange = (newColor) => {
+    document.documentElement.style.setProperty('--skin-color', newColor);
+
+    const muiTheme = createTheme({
+      palette: {
+        primary: {
+          main: newColor,
+        },
+      },
+    });
+
+    setTheme(muiTheme);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         <Router>
           <Header />
+
+          <ThemeSettings changeColor={handleSkinColorChange} />
 
           <Routes>
             <Route path="/" element={<Home />} />
@@ -72,10 +88,12 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
+
         <ScrollTop />
+
         <Footer />
       </div>
-    </ThemeProvider >
+    </ThemeProvider>
   );
 }
 
