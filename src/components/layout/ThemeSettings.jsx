@@ -1,11 +1,12 @@
 import { Box, IconButton, List, ListItem, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import SettingsIcon from '@mui/icons-material/Settings';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
-function ThemeSettings({ changeColor, changeMode }) {
+function ThemeSettings({ changeColor }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const colors = ['#ec1839', '#FF5733', '#3498db', '#27ae60', '#f1c40f'];
+	const settingsRef = useRef(null);
 
 	const handleThemeChange = (color) => {
 		changeColor(color);
@@ -15,8 +16,23 @@ function ThemeSettings({ changeColor, changeMode }) {
 		setIsOpen(!isOpen);
 	};
 
+	const handleClickOutside = (event) => {
+		if (settingsRef.current && !settingsRef.current.contains(event.target)) {
+			setIsOpen(false);
+		}
+	};
+
+	useEffect(() => {
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, []);
+
 	return (
-		<div className={`flex flex-row items-center gap-4 fixed top-3/4 right-2 z-10 transition-all duration-300`}
+		<div
+			ref={settingsRef}
+			className={`flex flex-row items-center gap-4 fixed top-3/4 right-2 z-10 transition-all duration-300`}
 			style={{
 				transform: isOpen ? 'translateX(0)' : 'translateX(calc(100% - 44px))',
 			}}

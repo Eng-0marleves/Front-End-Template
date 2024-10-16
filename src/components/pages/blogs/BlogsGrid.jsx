@@ -22,7 +22,7 @@ function BlogsGrid({ data }) {
 	};
 
 	return (
-		<Box sx={{ padding: 2 }}>
+		<Box>
 			<Grid container spacing={4} direction="column">
 				{currentBlogs.map((blog, index) => (
 					<Grid item xs={12} key={index}>

@@ -32,7 +32,11 @@ function App() {
   const [theme, setTheme] = useState(fallbackTheme);
 
   useEffect(() => {
-    const skinColor = getCssVariableValue('--skin-color') || '#3498db';
+    const skinColor = localStorage.getItem('skinColor') || getCssVariableValue('--skin-color') || '#3498db';
+
+    if (localStorage.getItem('skinColor')) {
+      document.documentElement.style.setProperty('--skin-color', localStorage.getItem('skinColor'));
+    }
 
     const muiTheme = createTheme({
       palette: {
@@ -47,6 +51,7 @@ function App() {
 
   const handleSkinColorChange = (newColor) => {
     document.documentElement.style.setProperty('--skin-color', newColor);
+    localStorage.setItem('skinColor', newColor);
 
     const muiTheme = createTheme({
       palette: {
@@ -59,38 +64,29 @@ function App() {
     setTheme(muiTheme);
   };
 
+
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+        <ThemeSettings changeColor={handleSkinColorChange} />
         <Router>
           <Header />
-
-          <ThemeSettings changeColor={handleSkinColorChange} />
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/:id" element={<PortfolioItem />} />
-
             <Route path="/teams" element={<Teams />} />
             <Route path="/teams/:id" element={<TeamDetails />} />
-
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blog/:id" element={<Blog />} />
-
             <Route path="/pricing" element={<Pricing />} />
-
             <Route path="/contact" element={<Contact />} />
-
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
-
         <ScrollTop />
-
         <Footer />
       </div>
     </ThemeProvider>
