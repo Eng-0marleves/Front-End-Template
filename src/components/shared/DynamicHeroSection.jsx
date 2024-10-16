@@ -33,7 +33,7 @@ function DynamicHeroSection({ img, title, description, quote, features, caption 
 			alignItems={{ xs: 'center', md: 'flex-start' }}
 			gap={0}
 		>
-			<Box flex={1} paddingRight={{ md: 5 }} textAlign={'left'}>
+			<Box flex={1} paddingRight={{ md: 5, minWidth: '320px' }} textAlign={'left'}>
 				<motion.div initial="hidden" animate="visible">
 					<motion.div variants={textVariants} custom={0}>
 						<Typography variant="h5" gutterBottom>
